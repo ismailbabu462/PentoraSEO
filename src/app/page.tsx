@@ -42,8 +42,8 @@ export default function Home() {
                             <span className="gradient-text block">SEO ve Geliştirici Araçları</span>
                         </h1>
                         <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8">
-                            Kelime sayacı, JSON formatlayıcı, görsel sıkıştırma ve daha
-                            fazlası. Hızlı, güvenli ve tamamen ücretsiz.
+                            Kelime sayacı, JSON formatlayıcı, PDF ve görsel araçları ile
+                            geliştiriciler ve SEO uzmanları için ücretsiz online çözümler.
                         </p>
 
                         {/* Search */}
@@ -138,22 +138,13 @@ export default function Home() {
 
                 {/* Category Filters */}
                 <div className="flex flex-wrap gap-2 mb-8 justify-center">
-                    <button
-                        onClick={() => setSelectedCategory("all")}
-                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === "all"
-                            ? "bg-brand-500 text-white shadow-lg shadow-brand-500/25"
-                            : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-                            }`}
-                    >
-                        Tümü
-                    </button>
                     {categories.map(([key, value]) => {
                         const count = tools.filter((t) => t.category === key).length;
                         return (
                             <button
                                 key={key}
                                 id={key}
-                                onClick={() => setSelectedCategory(key)}
+                                onClick={() => setSelectedCategory(selectedCategory === key ? "all" : key)}
                                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === key
                                     ? "bg-brand-500 text-white shadow-lg shadow-brand-500/25"
                                     : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -280,13 +271,13 @@ export default function Home() {
                         </div>
 
                         <button className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-white shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all hover:scale-105">
-                            Premium Al - Yakında
+                            Premium Al (Beta)
                         </button>
 
                         {/* Email Collection */}
                         <div className="mt-6">
                             <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                                Erken erişim için e-posta bırakın
+                                Şu an ücretsiz – erken erişim listesine katılın
                             </p>
                             {!emailSubmitted ? (
                                 <form onSubmit={handleEmailSubmit} className="flex gap-2 max-w-md mx-auto">
