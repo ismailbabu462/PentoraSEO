@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Ana Sayfa -->
+  <url>
+    <loc>https://pentorasec.online/</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Metin Araçları -->
+  <url>
+    <loc>https://pentorasec.online/tools/kelime-sayaci</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pentorasec.online/tools/metin-donusturucu</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pentorasec.online/tools/slug-olusturucu</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pentorasec.online/tools/metin-karsilastirma</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pentorasec.online/tools/regex-test</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Veri Araçları -->
+  <url>
+    <loc>https://pentorasec.online/tools/json-formatlayici</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pentorasec.online/tools/base64</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pentorasec.online/tools/uuid-olusturucu</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pentorasec.online/tools/hash-olusturucu</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Görsel Araçları -->
+  <url>
+    <loc>https://pentorasec.online/tools/gorsel-sikistirma</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pentorasec.online/tools/gorsel-donusturucu</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- PDF Araçları -->
+  <url>
+    <loc>https://pentorasec.online/tools/pdf-birlestirici</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pentorasec.online/tools/pdf-ayirici</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Hesaplayıcılar -->
+  <url>
+    <loc>https://pentorasec.online/tools/kdv-hesaplayici</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pentorasec.online/tools/maas-hesaplayici</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
