@@ -29,8 +29,13 @@ export function ToolCard({ tool }: ToolCardProps) {
             </h3>
 
             {/* Description */}
-            <p className="text-sm text-gray-600 dark:text-gray-400 flex-1">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                 {tool.shortDescription}
+            </p>
+
+            {/* SEO Tip */}
+            <p className="text-xs text-gray-500 dark:text-gray-500 flex-1">
+                {tool.seoTip}
             </p>
 
             {/* Arrow */}

@@ -37,8 +37,8 @@ export function Footer() {
                             </span>
                         </Link>
                         <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                            Hızlı, güvenli ve tamamen ücretsiz online araçlar. Tüm işlemler
-                            tarayıcınızda gerçekleşir.
+                            PentoraSEO, ücretsiz online SEO araçları ve geliştirici yardımcıları sunan bir platformdur.
+                            Hızlı, güvenli ve tamamen ücretsiz. Tüm işlemler tarayıcınızda gerçekleşir.
                         </p>
                     </div>
 
@@ -107,7 +107,7 @@ export function Footer() {
                             © {new Date().getFullYear()} PentoraSEO. Tüm hakları saklıdır.
                         </p>
                         <p className="text-xs text-gray-400 dark:text-gray-600">
-                            🔒 Verileriniz tarayıcınızdan asla çıkmaz
+                            Verileriniz tarayıcınızdan asla çıkmaz
                         </p>
                     </div>
                 </div>

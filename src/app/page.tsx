@@ -12,6 +12,8 @@ const categories = Object.entries(categoryInfo) as [
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedCategory, setSelectedCategory] = useState<ToolCategory | "all">("all");
+    const [email, setEmail] = useState("");
+    const [emailSubmitted, setEmailSubmitted] = useState(false);
 
     const filteredTools = useMemo(() => {
         let result = searchQuery ? searchTools(searchQuery) : tools;
@@ -21,6 +23,14 @@ export default function Home() {
         return result;
     }, [searchQuery, selectedCategory]);
 
+    const handleEmailSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (email) {
+            setEmailSubmitted(true);
+            // TODO: Backend entegrasyonu
+        }
+    };
+
     return (
         <>
             {/* Hero Section */}
@@ -29,7 +39,7 @@ export default function Home() {
                     <div className="text-center max-w-3xl mx-auto">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
                             Ücretsiz Online
-                            <span className="gradient-text block">Araçlar</span>
+                            <span className="gradient-text block">SEO ve Geliştirici Araçları</span>
                         </h1>
                         <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8">
                             Kelime sayacı, JSON formatlayıcı, görsel sıkıştırma ve daha
@@ -71,7 +81,7 @@ export default function Home() {
                                 <div className="text-gray-500">Ücretsiz</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-brand-500">🔒</div>
+                                <div className="text-2xl font-bold text-green-500">Güvenli</div>
                                 <div className="text-gray-500">Gizlilik</div>
                             </div>
                         </div>
@@ -83,15 +93,52 @@ export default function Home() {
                 <div className="absolute top-1/2 right-0 w-64 h-64 bg-purple-500/10 rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/2" />
             </section>
 
+            {/* SEO Content Section */}
+            <section className="container mx-auto px-4 py-12">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                        Metin, Veri, Görsel ve PDF Araçları
+                    </h2>
+                    <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-400">
+                        <p>
+                            <strong>PentoraSEO</strong>, geliştiriciler, SEO uzmanları ve içerik üreticileri için tasarlanmış
+                            kapsamlı bir ücretsiz online araç platformudur. Metin analizi araçlarımızla kelime sayısından
+                            karakter sayısına, slug oluşturucudan regex test aracına kadar tüm metin işleme ihtiyaçlarınızı
+                            karşılayabilirsiniz.
+                        </p>
+                        <p>
+                            Veri araçlarımız arasında <strong>JSON formatlayıcı ve doğrulayıcı</strong>, Base64 encode/decode,
+                            UUID oluşturucu ve hash hesaplayıcı bulunmaktadır. API geliştirme süreçlerinizde bu araçlar
+                            vazgeçilmez yardımcılarınız olacak. Görsel araçlarımızla resimlerinizi sıkıştırabilir,
+                            formatlar arasında dönüşüm yapabilirsiniz.
+                        </p>
+                        <p>
+                            <strong>PDF araçlarımız</strong> sayesinde birden fazla PDF dosyasını birleştirebilir veya
+                            PDF'lerden belirli sayfaları ayırabilirsiniz. KDV hesaplayıcı ve maaş hesaplayıcı gibi
+                            finansal araçlarımız da günlük iş hayatınızda size yardımcı olacak.
+                        </p>
+                        <p className="text-sm border-l-4 border-brand-500 pl-4 bg-brand-50 dark:bg-brand-950/30 py-3 rounded-r-lg">
+                            <strong>Gizlilik Garantisi:</strong> Tüm işlemler tamamen tarayıcınızda gerçekleşir.
+                            Dosyalarınız ve verileriniz hiçbir zaman sunucularımıza gönderilmez. Tam gizlilik ile
+                            güvenle çalışabilirsiniz.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             {/* Tools Section */}
             <section id="tools" className="container mx-auto px-4 py-12">
+                <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+                    Tüm Online Araçlar ({tools.length})
+                </h2>
+
                 {/* Category Filters */}
                 <div className="flex flex-wrap gap-2 mb-8 justify-center">
                     <button
                         onClick={() => setSelectedCategory("all")}
                         className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === "all"
-                                ? "bg-brand-500 text-white shadow-lg shadow-brand-500/25"
-                                : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                            ? "bg-brand-500 text-white shadow-lg shadow-brand-500/25"
+                            : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                             }`}
                     >
                         Tüm Araçlar ({tools.length})
@@ -104,8 +151,8 @@ export default function Home() {
                                 id={key}
                                 onClick={() => setSelectedCategory(key)}
                                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === key
-                                        ? "bg-brand-500 text-white shadow-lg shadow-brand-500/25"
-                                        : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                                    ? "bg-brand-500 text-white shadow-lg shadow-brand-500/25"
+                                    : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                                     }`}
                             >
                                 {value.icon} {value.name} ({count})
@@ -141,56 +188,6 @@ export default function Home() {
                         </button>
                     </div>
                 )}
-            </section>
-
-            {/* Premium Section */}
-            <section id="premium" className="container mx-auto px-4 py-16">
-                <div className="card p-8 md:p-12 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 border-amber-200 dark:border-amber-800 text-center">
-                    <div className="max-w-2xl mx-auto">
-                        <span className="premium-badge mb-4 inline-flex">⭐ Premium</span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                            Daha Fazlası İçin Premium
-                        </h2>
-                        <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                            Reklamsız deneyim, limitsiz toplu işlem ve öncelikli destek ile
-                            verimliliğinizi artırın.
-                        </p>
-
-                        <div className="grid sm:grid-cols-3 gap-4 mb-8">
-                            <div className="bg-white/50 dark:bg-gray-900/50 rounded-xl p-4">
-                                <div className="text-2xl mb-2">🚫</div>
-                                <h3 className="font-semibold text-gray-900 dark:text-white">
-                                    Reklamsız
-                                </h3>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                    Temiz arayüz
-                                </p>
-                            </div>
-                            <div className="bg-white/50 dark:bg-gray-900/50 rounded-xl p-4">
-                                <div className="text-2xl mb-2">♾️</div>
-                                <h3 className="font-semibold text-gray-900 dark:text-white">
-                                    Limitsiz
-                                </h3>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                    Toplu işlem
-                                </p>
-                            </div>
-                            <div className="bg-white/50 dark:bg-gray-900/50 rounded-xl p-4">
-                                <div className="text-2xl mb-2">💬</div>
-                                <h3 className="font-semibold text-gray-900 dark:text-white">
-                                    Öncelikli
-                                </h3>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                    Destek
-                                </p>
-                            </div>
-                        </div>
-
-                        <button className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-white shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all hover:scale-105">
-                            Premium Al - Yakında
-                        </button>
-                    </div>
-                </div>
             </section>
 
             {/* Features Section */}
@@ -231,6 +228,82 @@ export default function Home() {
                         <p className="text-gray-600 dark:text-gray-400">
                             Tüm temel özellikler sonsuza kadar ücretsiz.
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Premium Section */}
+            <section id="premium" className="container mx-auto px-4 py-16">
+                <div className="card p-8 md:p-12 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 border-amber-200 dark:border-amber-800 text-center">
+                    <div className="max-w-2xl mx-auto">
+                        <span className="premium-badge mb-4 inline-flex">⭐ Premium</span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                            Premium Avantajları
+                        </h2>
+                        <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                            Reklamsız deneyim, limitsiz toplu işlem ve öncelikli destek ile
+                            verimliliğinizi artırın.
+                        </p>
+
+                        <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                            <div className="bg-white/50 dark:bg-gray-900/50 rounded-xl p-4">
+                                <div className="text-2xl mb-2">🚫</div>
+                                <h3 className="font-semibold text-gray-900 dark:text-white">
+                                    Reklamsız
+                                </h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">
+                                    Temiz arayüz
+                                </p>
+                            </div>
+                            <div className="bg-white/50 dark:bg-gray-900/50 rounded-xl p-4">
+                                <div className="text-2xl mb-2">♾️</div>
+                                <h3 className="font-semibold text-gray-900 dark:text-white">
+                                    Limitsiz
+                                </h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">
+                                    Toplu işlem
+                                </p>
+                            </div>
+                            <div className="bg-white/50 dark:bg-gray-900/50 rounded-xl p-4">
+                                <div className="text-2xl mb-2">💬</div>
+                                <h3 className="font-semibold text-gray-900 dark:text-white">
+                                    Öncelikli
+                                </h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">
+                                    Destek
+                                </p>
+                            </div>
+                        </div>
+
+                        <button className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-white shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all hover:scale-105">
+                            Premium Al - Yakında
+                        </button>
+
+                        {/* Email Collection */}
+                        <div className="mt-6">
+                            <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                                Erken erişim için e-posta bırakın
+                            </p>
+                            {!emailSubmitted ? (
+                                <form onSubmit={handleEmailSubmit} className="flex gap-2 max-w-md mx-auto">
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        placeholder="ornek@email.com"
+                                        className="input-base flex-1 text-sm"
+                                        required
+                                    />
+                                    <button type="submit" className="btn-secondary text-sm whitespace-nowrap">
+                                        Kayıt Ol
+                                    </button>
+                                </form>
+                            ) : (
+                                <p className="text-green-600 dark:text-green-400 font-medium">
+                                    ✓ Kaydınız alındı! Premium çıktığında size haber vereceğiz.
+                                </p>
+                            )}
+                        </div>
                     </div>
                 </div>
             </section>

@@ -8,6 +8,7 @@ export interface Tool {
     name: string;
     shortDescription: string;
     description: string;
+    seoTip: string;
     category: ToolCategory;
     icon: string;
     keywords: string[];
@@ -35,6 +36,7 @@ export const tools: Tool[] = [
         shortDescription: "Metindeki kelime, karakter ve cümle sayısını hesapla",
         description:
             "Metinlerinizdeki kelime sayısını, karakter sayısını (boşluklu ve boşluksuz), cümle ve paragraf sayısını anında hesaplayın. İçerik yazarları, öğrenciler ve SEO uzmanları için ideal.",
+        seoTip: "SEO uyumlu içerik üretmek için kelime, karakter ve cümle sayısını anında öğrenin.",
         category: "text",
         icon: "🔢",
         keywords: ["kelime sayacı", "karakter sayacı", "harf sayacı", "metin analizi"],
@@ -58,6 +60,7 @@ export const tools: Tool[] = [
         shortDescription: "Metni büyük/küçük harf, cümle veya slug formatına dönüştür",
         description:
             "Metinlerinizi büyük harfe, küçük harfe, başlık formatına veya URL-uyumlu slug formatına anında dönüştürün. Yazım düzeltmeleri ve format dönüşümleri için hızlı ve kolay.",
+        seoTip: "Metin formatını saniyeler içinde değiştirin - büyük harf, küçük harf, başlık formatı ve daha fazlası.",
         category: "text",
         icon: "🔄",
         keywords: ["metin dönüştürücü", "büyük harf", "küçük harf", "case converter"],
@@ -76,6 +79,7 @@ export const tools: Tool[] = [
         shortDescription: "Türkçe karakterleri destekleyen SEO dostu URL oluştur",
         description:
             "Türkçe karakterleri otomatik olarak ASCII karşılıklarına dönüştüren (ş→s, ğ→g, ü→u) SEO uyumlu slug oluşturucu. Blog yazıları ve web sayfaları için temiz URL'ler oluşturun.",
+        seoTip: "Google'da üst sıralara çıkmak için SEO uyumlu URL slug'ları oluşturun.",
         category: "text",
         icon: "🔗",
         keywords: ["slug oluşturucu", "url oluşturucu", "seo url", "türkçe slug"],
@@ -99,6 +103,7 @@ export const tools: Tool[] = [
         shortDescription: "İki metni karşılaştır ve farklılıkları görüntüle",
         description:
             "İki metin arasındaki farkları yan yana görüntüleyin. Eklenen, silinen ve değiştirilen satırları renkli olarak vurgular. Kod inceleme ve doküman karşılaştırma için ideal.",
+        seoTip: "Kod ve doküman değişikliklerini profesyonel diff görünümüyle kolayca tespit edin.",
         category: "text",
         icon: "⚖️",
         keywords: ["metin karşılaştırma", "diff", "fark bulma", "compare text"],
@@ -117,6 +122,7 @@ export const tools: Tool[] = [
         shortDescription: "Düzenli ifadeleri canlı olarak test et ve debug yap",
         description:
             "Regular expression (regex) kalıplarınızı gerçek zamanlı olarak test edin. Eşleşmeleri vurgular, hataları gösterir ve yaygın regex kalıpları için örnekler sunar.",
+        seoTip: "Regex kalıplarınızı canlı olarak test edin ve eşleşmeleri anında görün.",
         category: "text",
         icon: "🎯",
         keywords: ["regex", "regular expression", "düzenli ifade", "pattern matching"],
@@ -142,6 +148,7 @@ export const tools: Tool[] = [
         shortDescription: "JSON verilerini formatla, doğrula ve düzenle",
         description:
             "JSON verilerinizi güzelleştirin, doğrulayın ve düzenleyin. Hatalı JSON'ları tespit edin, minify yapın veya okunabilir formata dönüştürün. API geliştirme için olmazsa olmaz.",
+        seoTip: "API geliştirme ve debug için JSON verilerinizi profesyonelce formatlayın.",
         category: "data",
         icon: "{ }",
         keywords: ["json formatlayıcı", "json validator", "json beautifier", "json minify"],
@@ -165,6 +172,7 @@ export const tools: Tool[] = [
         shortDescription: "Metin veya dosyaları Base64 formatına dönüştür",
         description:
             "Metin veya dosyaları Base64 formatına encode edin veya Base64 verilerini decode edin. Email ekleri, data URI'ler ve API istekleri için kullanışlı.",
+        seoTip: "Metin ve dosyaları Base64 formatına anında dönüştürün veya çözün.",
         category: "data",
         icon: "🔐",
         keywords: ["base64 encode", "base64 decode", "base64 converter", "base64 çevirici"],
@@ -183,6 +191,7 @@ export const tools: Tool[] = [
         shortDescription: "Benzersiz UUID v4 değerleri oluştur",
         description:
             "Evrensel benzersiz tanımlayıcı (UUID) v4 değerleri oluşturun. Tek seferde 100'e kadar UUID üretebilirsiniz. Veritabanı, API ve uygulamalar için ideal.",
+        seoTip: "Veritabanı ve API'ler için benzersiz UUID v4 tanımlayıcıları oluşturun.",
         category: "data",
         icon: "🆔",
         keywords: ["uuid generator", "uuid oluşturucu", "guid generator", "unique id"],
@@ -206,6 +215,7 @@ export const tools: Tool[] = [
         shortDescription: "MD5, SHA-1, SHA-256 hash değerleri oluştur",
         description:
             "Metinlerinizin MD5, SHA-1 ve SHA-256 hash değerlerini hesaplayın. Dosya bütünlüğü kontrolü, şifre hashleme ve veri doğrulama için kullanışlı.",
+        seoTip: "Güvenlik ve doğrulama için MD5, SHA-1 ve SHA-256 hash değerleri oluşturun.",
         category: "data",
         icon: "#️⃣",
         keywords: ["hash generator", "md5", "sha1", "sha256", "hash oluşturucu"],
@@ -231,6 +241,7 @@ export const tools: Tool[] = [
         shortDescription: "Görselleri kalite kaybı olmadan sıkıştır",
         description:
             "JPEG, PNG ve WebP görsellerinizi tarayıcınızda sıkıştırın. Dosyalarınız sunucuya gönderilmez, tamamen gizli. Öncesi/sonrası karşılaştırması ile boyut tasarrufunu görün.",
+        seoTip: "Web sitenizi hızlandırmak için görselleri kalite kaybı olmadan %80'e kadar sıkıştırın.",
         category: "image",
         icon: "🗜️",
         keywords: ["görsel sıkıştırma", "resim sıkıştırma", "image compression", "optimize"],
@@ -254,6 +265,7 @@ export const tools: Tool[] = [
         shortDescription: "JPG, PNG ve WebP arasında dönüşüm yap",
         description:
             "Görsellerinizi JPG, PNG ve WebP formatları arasında dönüştürün. Modern WebP formatı ile dosya boyutunuzu küçültün veya şeffaf arka plan için PNG kullanın.",
+        seoTip: "Görselleri modern WebP formatına dönüştürerek sayfa hızınızı artırın.",
         category: "image",
         icon: "🔄",
         keywords: ["format dönüştürücü", "jpg to png", "png to webp", "image converter"],
@@ -274,6 +286,7 @@ export const tools: Tool[] = [
         shortDescription: "Birden fazla PDF'i tek dosyada birleştir",
         description:
             "Birden fazla PDF dosyasını sürükle-bırak ile sıralayın ve tek bir PDF'te birleştirin. Sıralama değiştirilebilir, tüm işlemler tarayıcıda gerçekleşir.",
+        seoTip: "Birden fazla PDF dosyasını saniyeler içinde tek dosyada birleştirin.",
         category: "pdf",
         icon: "📎",
         keywords: ["pdf birleştirici", "pdf merge", "pdf combine", "pdf concat"],
@@ -297,6 +310,7 @@ export const tools: Tool[] = [
         shortDescription: "PDF'ten belirli sayfaları ayır veya böl",
         description:
             "PDF dosyalarından belirli sayfaları çıkarın veya ayrı dosyalara bölün. Sayfa aralığı seçimi ile ihtiyacınız olan sayfaları alın.",
+        seoTip: "Büyük PDF dosyalarından ihtiyacınız olan sayfaları kolayca ayırın.",
         category: "pdf",
         icon: "✂️",
         keywords: ["pdf ayırıcı", "pdf split", "pdf bölme", "sayfa çıkarma"],
@@ -317,6 +331,7 @@ export const tools: Tool[] = [
         shortDescription: "KDV dahil/hariç fiyat hesaplama",
         description:
             "KDV dahil veya hariç fiyatları anında hesaplayın. %1, %10, %20 ve özel KDV oranları desteklenir. Net ve brüt tutarları kolayca hesaplayın.",
+        seoTip: "Fatura ve fiyatlandırma için KDV dahil/hariç tutarları hızlıca hesaplayın.",
         category: "calculator",
         icon: "💰",
         keywords: ["kdv hesaplama", "vat calculator", "vergi hesaplama", "kdv hesaplayıcı"],
@@ -335,6 +350,7 @@ export const tools: Tool[] = [
         shortDescription: "Net ve brüt maaş arasında dönüşüm yap",
         description:
             "Net maaştan brüt tutarı veya brüt maaştan net tutarı hesaplayın. SGK, gelir vergisi ve damga vergisi kesintilerini görün.",
+        seoTip: "Maaş teklifi değerlendirmesi için net-brüt dönüşümünü anında yapın.",
         category: "calculator",
         icon: "💵",
         keywords: ["maaş hesaplama", "net brüt", "salary calculator", "maaş hesaplayıcı"],

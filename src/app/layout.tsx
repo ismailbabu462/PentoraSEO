@@ -13,11 +13,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
     title: {
-        default: "PentoraSEO - Ücretsiz Online Araçlar",
+        default: "Ücretsiz Online SEO & Developer Araçları | PentoraSEO",
         template: "%s | PentoraSEO",
     },
     description:
-        "Kelime sayacı, JSON formatlayıcı, görsel sıkıştırma ve daha fazlası. Hızlı, güvenli ve tamamen ücretsiz online araçlar.",
+        "Kelime sayacı, JSON formatlayıcı, PDF ve görsel araçları. Hızlı, güvenli ve %100 ücretsiz online araçlar. Verileriniz cihazınızdan çıkmaz.",
     keywords: [
         "online araçlar",
         "ücretsiz araçlar",
