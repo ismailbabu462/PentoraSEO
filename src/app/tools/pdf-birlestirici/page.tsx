@@ -74,7 +74,7 @@ export default function PdfBirlestiriciPage() {
             }
 
             const mergedBytes = await mergedPdf.save();
-            const blob = new Blob([mergedBytes], { type: "application/pdf" });
+            const blob = new Blob([mergedBytes.buffer as ArrayBuffer], { type: "application/pdf" });
             const url = URL.createObjectURL(blob);
 
             const link = document.createElement("a");
