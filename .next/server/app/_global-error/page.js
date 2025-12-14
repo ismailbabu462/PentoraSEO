@@ -1,0 +1,10 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_global-error/page.js")
+R.c("server/chunks/ssr/5dbad_31111c21._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__4355910c._.js")
+R.c("server/chunks/ssr/5dbad_next_dist_8847bc40._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__7223a49f._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__13015784._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__ee22051a._.js")
+R.c("server/chunks/ssr/Desktop_pentoraSEO__next-internal_server_app__global-error_page_actions_d86eca33.js")
+R.m(88204)
+module.exports=R.m(88204).exports

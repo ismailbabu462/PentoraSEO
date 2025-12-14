@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/tools/base64/page": "app/tools/base64/page.js",
+  "/tools/gorsel-sikistirma/page": "app/tools/gorsel-sikistirma/page.js",
+  "/tools/json-formatlayici/page": "app/tools/json-formatlayici/page.js",
+  "/tools/kelime-sayaci/page": "app/tools/kelime-sayaci/page.js",
+  "/tools/maas-hesaplayici/page": "app/tools/maas-hesaplayici/page.js",
+  "/tools/metin-donusturucu/page": "app/tools/metin-donusturucu/page.js",
+  "/tools/metin-karsilastirma/page": "app/tools/metin-karsilastirma/page.js",
+  "/tools/regex-test/page": "app/tools/regex-test/page.js",
+  "/tools/slug-olusturucu/page": "app/tools/slug-olusturucu/page.js",
+  "/tools/uuid-olusturucu/page": "app/tools/uuid-olusturucu/page.js"
+}

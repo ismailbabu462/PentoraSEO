@@ -1,0 +1,3 @@
+module.exports=[63096,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(25253);a.n(d("[project]/Desktop/pentoraSEO/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},96947,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(25253);a.n(d("[project]/Desktop/pentoraSEO/node_modules/next/dist/client/components/builtin/global-error.js"))},25482,a=>{"use strict";a.i(63096);var b=a.i(96947);a.n(b)}];
+
+//# sourceMappingURL=5dbad_next_dist_client_components_builtin_global-error_e5eef0f5.js.map

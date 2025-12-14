@@ -1,0 +1,35 @@
+{
+  "name": "pentoraseo",
+  "version": "1.0.0",
+  "description": "Modern SEO-friendly micro tools website",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-image-compression": "^2.0.2",
+    "clsx": "^2.1.1",
+    "diff": "^8.0.2",
+    "next": "^16.0.10",
+    "pdf-lib": "^1.17.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwind-merge": "^3.4.0",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/diff": "^7.0.2",
+    "@types/node": "^25.0.2",
+    "@types/react": "^19.2.7",
+    "@types/uuid": "^10.0.0",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3"
+  }
+}

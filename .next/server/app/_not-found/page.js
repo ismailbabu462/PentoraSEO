@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_not-found/page.js")
+R.c("server/chunks/ssr/Desktop_pentoraSEO_d6b00789._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__4355910c._.js")
+R.c("server/chunks/ssr/5dbad_next_dist_esm_build_templates_app-page_39231d8f.js")
+R.c("server/chunks/ssr/[root-of-the-server]__7223a49f._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__13015784._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__ee22051a._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__10e7f988._.js")
+R.c("server/chunks/ssr/5dbad_next_dist_client_components_2fd20905._.js")
+R.c("server/chunks/ssr/5dbad_next_dist_client_components_builtin_forbidden_245cc618.js")
+R.c("server/chunks/ssr/Desktop_pentoraSEO__next-internal_server_app__not-found_page_actions_f2691ef5.js")
+R.m(91621)
+module.exports=R.m(91621).exports

@@ -1,0 +1,1153 @@
+module.exports = [
+"[project]/Desktop/pentoraSEO/src/data/tools.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "categoryInfo",
+    ()=>categoryInfo,
+    "getCategoriesWithCount",
+    ()=>getCategoriesWithCount,
+    "getToolBySlug",
+    ()=>getToolBySlug,
+    "getToolsByCategory",
+    ()=>getToolsByCategory,
+    "searchTools",
+    ()=>searchTools,
+    "tools",
+    ()=>tools
+]);
+const categoryInfo = {
+    text: {
+        name: "Metin Araçları",
+        icon: "📝",
+        color: "category-text"
+    },
+    data: {
+        name: "Veri Araçları",
+        icon: "💻",
+        color: "category-data"
+    },
+    image: {
+        name: "Görsel Araçları",
+        icon: "🖼️",
+        color: "category-image"
+    },
+    pdf: {
+        name: "PDF Araçları",
+        icon: "📄",
+        color: "category-pdf"
+    },
+    calculator: {
+        name: "Hesaplayıcılar",
+        icon: "🧮",
+        color: "category-calculator"
+    }
+};
+const tools = [
+    // TEXT TOOLS
+    {
+        id: "kelime-sayaci",
+        slug: "kelime-sayaci",
+        name: "Kelime & Karakter Sayacı",
+        shortDescription: "Metindeki kelime, karakter ve cümle sayısını hesapla",
+        description: "Metinlerinizdeki kelime sayısını, karakter sayısını (boşluklu ve boşluksuz), cümle ve paragraf sayısını anında hesaplayın. İçerik yazarları, öğrenciler ve SEO uzmanları için ideal.",
+        category: "text",
+        icon: "🔢",
+        keywords: [
+            "kelime sayacı",
+            "karakter sayacı",
+            "harf sayacı",
+            "metin analizi"
+        ],
+        faqs: [
+            {
+                question: "Kelime sayacı ne işe yarar?",
+                answer: "Kelime sayacı, metinlerinizdeki toplam kelime, karakter, cümle ve paragraf sayısını hesaplar. Blog yazıları, akademik ödevler ve sosyal medya paylaşımları için karakter limitlerini kontrol etmenize yardımcı olur."
+            },
+            {
+                question: "Boşluklu ve boşluksuz karakter sayısı arasındaki fark nedir?",
+                answer: "Boşluklu karakter sayısı metindeki boşlukları da dahil eder, boşluksuz ise sadece harf ve sembolleri sayar. Twitter, Instagram gibi platformlar genellikle boşluklu sayıyı kullanır."
+            }
+        ]
+    },
+    {
+        id: "metin-donusturucu",
+        slug: "metin-donusturucu",
+        name: "Metin Dönüştürücü",
+        shortDescription: "Metni büyük/küçük harf, cümle veya slug formatına dönüştür",
+        description: "Metinlerinizi büyük harfe, küçük harfe, başlık formatına veya URL-uyumlu slug formatına anında dönüştürün. Yazım düzeltmeleri ve format dönüşümleri için hızlı ve kolay.",
+        category: "text",
+        icon: "🔄",
+        keywords: [
+            "metin dönüştürücü",
+            "büyük harf",
+            "küçük harf",
+            "case converter"
+        ],
+        faqs: [
+            {
+                question: "Hangi metin formatları destekleniyor?",
+                answer: "BÜYÜK HARF, küçük harf, Başlık Formatı, cÜMLE FORMATI ve url-slug-formati desteklenmektedir."
+            }
+        ]
+    },
+    {
+        id: "slug-olusturucu",
+        slug: "slug-olusturucu",
+        name: "SEO Uyumlu Slug Oluşturucu",
+        shortDescription: "Türkçe karakterleri destekleyen SEO dostu URL oluştur",
+        description: "Türkçe karakterleri otomatik olarak ASCII karşılıklarına dönüştüren (ş→s, ğ→g, ü→u) SEO uyumlu slug oluşturucu. Blog yazıları ve web sayfaları için temiz URL'ler oluşturun.",
+        category: "text",
+        icon: "🔗",
+        keywords: [
+            "slug oluşturucu",
+            "url oluşturucu",
+            "seo url",
+            "türkçe slug"
+        ],
+        faqs: [
+            {
+                question: "Slug nedir ve neden önemlidir?",
+                answer: "Slug, bir web sayfasının URL'sindeki okunabilir kısımdır (örn: /blog/seo-ipuclari). SEO için önemlidir çünkü arama motorları URL'lerdeki anahtar kelimeleri değerlendirir."
+            },
+            {
+                question: "Türkçe karakterler neden dönüştürülüyor?",
+                answer: "ş, ğ, ü, ö, ç, ı gibi Türkçe karakterler bazı sistemlerde sorun çıkarabilir. Bu yüzden URL'lerde ASCII karakterlere (s, g, u, o, c, i) dönüştürülür."
+            }
+        ]
+    },
+    {
+        id: "metin-karsilastirma",
+        slug: "metin-karsilastirma",
+        name: "Metin Karşılaştırma (Diff)",
+        shortDescription: "İki metni karşılaştır ve farklılıkları görüntüle",
+        description: "İki metin arasındaki farkları yan yana görüntüleyin. Eklenen, silinen ve değiştirilen satırları renkli olarak vurgular. Kod inceleme ve doküman karşılaştırma için ideal.",
+        category: "text",
+        icon: "⚖️",
+        keywords: [
+            "metin karşılaştırma",
+            "diff",
+            "fark bulma",
+            "compare text"
+        ],
+        faqs: [
+            {
+                question: "Diff aracı ne işe yarar?",
+                answer: "Diff aracı iki metin arasındaki farkları tespit eder. Eklenen satırlar yeşil, silinen satırlar kırmızı olarak gösterilir. Kod versiyonları, doküman revizyonları ve çeviri kontrolü için kullanılır."
+            }
+        ]
+    },
+    {
+        id: "regex-test",
+        slug: "regex-test",
+        name: "Regex Test Aracı",
+        shortDescription: "Düzenli ifadeleri canlı olarak test et ve debug yap",
+        description: "Regular expression (regex) kalıplarınızı gerçek zamanlı olarak test edin. Eşleşmeleri vurgular, hataları gösterir ve yaygın regex kalıpları için örnekler sunar.",
+        category: "text",
+        icon: "🎯",
+        keywords: [
+            "regex",
+            "regular expression",
+            "düzenli ifade",
+            "pattern matching"
+        ],
+        faqs: [
+            {
+                question: "Regex nedir?",
+                answer: "Regex (Regular Expression), metin içinde kalıp aramak için kullanılan bir dildir. Email doğrulama, telefon numarası bulma gibi işlemler için kullanılır."
+            },
+            {
+                question: "Hangi regex flag'leri destekleniyor?",
+                answer: "g (global), i (case-insensitive), m (multiline), s (dotAll), u (unicode) flag'leri desteklenmektedir."
+            }
+        ]
+    },
+    // DATA TOOLS
+    {
+        id: "json-formatlayici",
+        slug: "json-formatlayici",
+        name: "JSON Formatlayıcı & Doğrulayıcı",
+        shortDescription: "JSON verilerini formatla, doğrula ve düzenle",
+        description: "JSON verilerinizi güzelleştirin, doğrulayın ve düzenleyin. Hatalı JSON'ları tespit edin, minify yapın veya okunabilir formata dönüştürün. API geliştirme için olmazsa olmaz.",
+        category: "data",
+        icon: "{ }",
+        keywords: [
+            "json formatlayıcı",
+            "json validator",
+            "json beautifier",
+            "json minify"
+        ],
+        faqs: [
+            {
+                question: "JSON nedir?",
+                answer: "JSON (JavaScript Object Notation), veri alışverişi için kullanılan hafif bir format. API'ler, konfigürasyon dosyaları ve veri depolama için yaygın olarak kullanılır."
+            },
+            {
+                question: "JSON doğrulama neden önemlidir?",
+                answer: "Hatalı JSON, uygulamaların çökmesine neden olabilir. Doğrulayıcı, eksik virgül, tırnak veya parantez gibi hataları tespit eder."
+            }
+        ]
+    },
+    {
+        id: "base64",
+        slug: "base64",
+        name: "Base64 Encode / Decode",
+        shortDescription: "Metin veya dosyaları Base64 formatına dönüştür",
+        description: "Metin veya dosyaları Base64 formatına encode edin veya Base64 verilerini decode edin. Email ekleri, data URI'ler ve API istekleri için kullanışlı.",
+        category: "data",
+        icon: "🔐",
+        keywords: [
+            "base64 encode",
+            "base64 decode",
+            "base64 converter",
+            "base64 çevirici"
+        ],
+        faqs: [
+            {
+                question: "Base64 nedir?",
+                answer: "Base64, binary verileri ASCII karakterlere dönüştüren bir encoding yöntemi. Email ekleri, CSS'te gömülü resimler ve API'lerde veri transferi için kullanılır."
+            }
+        ]
+    },
+    {
+        id: "uuid-olusturucu",
+        slug: "uuid-olusturucu",
+        name: "UUID Oluşturucu",
+        shortDescription: "Benzersiz UUID v4 değerleri oluştur",
+        description: "Evrensel benzersiz tanımlayıcı (UUID) v4 değerleri oluşturun. Tek seferde 100'e kadar UUID üretebilirsiniz. Veritabanı, API ve uygulamalar için ideal.",
+        category: "data",
+        icon: "🆔",
+        keywords: [
+            "uuid generator",
+            "uuid oluşturucu",
+            "guid generator",
+            "unique id"
+        ],
+        faqs: [
+            {
+                question: "UUID nedir ve ne için kullanılır?",
+                answer: "UUID (Universally Unique Identifier), 128-bit benzersiz bir tanımlayıcıdır. Veritabanı kayıtları, API kaynakları ve dağıtık sistemlerde benzersiz ID'ler için kullanılır."
+            },
+            {
+                question: "UUID v4 nasıl oluşturulur?",
+                answer: "UUID v4, rastgele sayılar kullanılarak oluşturulur. Çakışma olasılığı astronomik olarak düşüktür (2^122'de 1)."
+            }
+        ]
+    },
+    {
+        id: "hash-olusturucu",
+        slug: "hash-olusturucu",
+        name: "Hash Oluşturucu",
+        shortDescription: "MD5, SHA-1, SHA-256 hash değerleri oluştur",
+        description: "Metinlerinizin MD5, SHA-1 ve SHA-256 hash değerlerini hesaplayın. Dosya bütünlüğü kontrolü, şifre hashleme ve veri doğrulama için kullanışlı.",
+        category: "data",
+        icon: "#️⃣",
+        keywords: [
+            "hash generator",
+            "md5",
+            "sha1",
+            "sha256",
+            "hash oluşturucu"
+        ],
+        faqs: [
+            {
+                question: "Hash nedir?",
+                answer: "Hash, herhangi bir veriden sabit uzunlukta benzersiz bir değer üreten tek yönlü bir fonksiyondur. Aynı giriş her zaman aynı çıkışı verir ama tersine dönüştürülemez."
+            },
+            {
+                question: "Hangi hash algoritmasını kullanmalıyım?",
+                answer: "MD5 ve SHA-1 artık güvenli kabul edilmiyor. Güvenlik gerektiren işlemler için SHA-256 veya daha güçlü algoritmalar tercih edilmeli."
+            }
+        ]
+    },
+    // IMAGE TOOLS
+    {
+        id: "gorsel-sikistirma",
+        slug: "gorsel-sikistirma",
+        name: "Görsel Sıkıştırma",
+        shortDescription: "Görselleri kalite kaybı olmadan sıkıştır",
+        description: "JPEG, PNG ve WebP görsellerinizi tarayıcınızda sıkıştırın. Dosyalarınız sunucuya gönderilmez, tamamen gizli. Öncesi/sonrası karşılaştırması ile boyut tasarrufunu görün.",
+        category: "image",
+        icon: "🗜️",
+        keywords: [
+            "görsel sıkıştırma",
+            "resim sıkıştırma",
+            "image compression",
+            "optimize"
+        ],
+        faqs: [
+            {
+                question: "Görsellerim sunucuya yükleniyor mu?",
+                answer: "Hayır! Tüm işlemler tarayıcınızda gerçekleşir. Görselleriniz bilgisayarınızdan asla çıkmaz, tam gizlilik sağlanır."
+            },
+            {
+                question: "Sıkıştırma kaliteyi düşürür mü?",
+                answer: "Akıllı algoritmalar kullanarak görünür kalite kaybı olmadan dosya boyutunu %50-80 oranında azaltabilirsiniz."
+            }
+        ]
+    },
+    {
+        id: "gorsel-donusturucu",
+        slug: "gorsel-donusturucu",
+        name: "Görsel Format Dönüştürücü",
+        shortDescription: "JPG, PNG ve WebP arasında dönüşüm yap",
+        description: "Görsellerinizi JPG, PNG ve WebP formatları arasında dönüştürün. Modern WebP formatı ile dosya boyutunuzu küçültün veya şeffaf arka plan için PNG kullanın.",
+        category: "image",
+        icon: "🔄",
+        keywords: [
+            "format dönüştürücü",
+            "jpg to png",
+            "png to webp",
+            "image converter"
+        ],
+        faqs: [
+            {
+                question: "Hangi formatı ne zaman kullanmalıyım?",
+                answer: "JPEG: Fotoğraflar için, PNG: Şeffaflık gereken görseller için, WebP: Modern tarayıcılarda en iyi sıkıştırma için."
+            }
+        ]
+    },
+    // PDF TOOLS
+    {
+        id: "pdf-birlestirici",
+        slug: "pdf-birlestirici",
+        name: "PDF Birleştirici",
+        shortDescription: "Birden fazla PDF'i tek dosyada birleştir",
+        description: "Birden fazla PDF dosyasını sürükle-bırak ile sıralayın ve tek bir PDF'te birleştirin. Sıralama değiştirilebilir, tüm işlemler tarayıcıda gerçekleşir.",
+        category: "pdf",
+        icon: "📎",
+        keywords: [
+            "pdf birleştirici",
+            "pdf merge",
+            "pdf combine",
+            "pdf concat"
+        ],
+        faqs: [
+            {
+                question: "Kaç PDF birleştirebilirim?",
+                answer: "Tarayıcı bellek sınırları dahilinde istediğiniz kadar PDF birleştirebilirsiniz. Pratik kullanımda 50+ dosya sorunsuz çalışır."
+            },
+            {
+                question: "Birleştirme sırası değiştirilebilir mi?",
+                answer: "Evet! Dosyaları sürükle-bırak ile istediğiniz sıraya getirebilirsiniz."
+            }
+        ]
+    },
+    {
+        id: "pdf-ayirici",
+        slug: "pdf-ayirici",
+        name: "PDF Ayırıcı",
+        shortDescription: "PDF'ten belirli sayfaları ayır veya böl",
+        description: "PDF dosyalarından belirli sayfaları çıkarın veya ayrı dosyalara bölün. Sayfa aralığı seçimi ile ihtiyacınız olan sayfaları alın.",
+        category: "pdf",
+        icon: "✂️",
+        keywords: [
+            "pdf ayırıcı",
+            "pdf split",
+            "pdf bölme",
+            "sayfa çıkarma"
+        ],
+        faqs: [
+            {
+                question: "Sayfa aralığı nasıl belirtilir?",
+                answer: "1-5 (1'den 5'e), 1,3,5 (sadece belirtilen sayfalar), 1-3,7,9-12 (karma) formatlarını kullanabilirsiniz."
+            }
+        ]
+    },
+    // CALCULATOR TOOLS
+    {
+        id: "kdv-hesaplayici",
+        slug: "kdv-hesaplayici",
+        name: "KDV Hesaplayıcı",
+        shortDescription: "KDV dahil/hariç fiyat hesaplama",
+        description: "KDV dahil veya hariç fiyatları anında hesaplayın. %1, %10, %20 ve özel KDV oranları desteklenir. Net ve brüt tutarları kolayca hesaplayın.",
+        category: "calculator",
+        icon: "💰",
+        keywords: [
+            "kdv hesaplama",
+            "vat calculator",
+            "vergi hesaplama",
+            "kdv hesaplayıcı"
+        ],
+        faqs: [
+            {
+                question: "KDV oranları nelerdir?",
+                answer: "Türkiye'de temel ürünler için %1, bazı ürünler için %10 ve genel oran olarak %20 KDV uygulanmaktadır."
+            }
+        ]
+    },
+    {
+        id: "maas-hesaplayici",
+        slug: "maas-hesaplayici",
+        name: "Net ↔ Brüt Maaş Hesaplayıcı",
+        shortDescription: "Net ve brüt maaş arasında dönüşüm yap",
+        description: "Net maaştan brüt tutarı veya brüt maaştan net tutarı hesaplayın. SGK, gelir vergisi ve damga vergisi kesintilerini görün.",
+        category: "calculator",
+        icon: "💵",
+        keywords: [
+            "maaş hesaplama",
+            "net brüt",
+            "salary calculator",
+            "maaş hesaplayıcı"
+        ],
+        faqs: [
+            {
+                question: "Hesaplamada hangi kesintiler dahil?",
+                answer: "SGK işçi payı (%14), işsizlik sigortası (%1), gelir vergisi (kümülatif) ve damga vergisi (%0.759) dahildir."
+            }
+        ]
+    }
+];
+function getToolsByCategory(category) {
+    return tools.filter((tool)=>tool.category === category);
+}
+function getToolBySlug(slug) {
+    return tools.find((tool)=>tool.slug === slug);
+}
+function getCategoriesWithCount() {
+    const categories = Object.keys(categoryInfo);
+    return categories.map((category)=>({
+            category,
+            count: tools.filter((t)=>t.category === category).length
+        }));
+}
+function searchTools(query) {
+    const normalizedQuery = query.toLowerCase().trim();
+    if (!normalizedQuery) return tools;
+    return tools.filter((tool)=>tool.name.toLowerCase().includes(normalizedQuery) || tool.shortDescription.toLowerCase().includes(normalizedQuery) || tool.keywords.some((k)=>k.toLowerCase().includes(normalizedQuery)));
+}
+}),
+"[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ToolCard",
+    ()=>ToolCard
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/pentoraSEO/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/pentoraSEO/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$src$2f$data$2f$tools$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/pentoraSEO/src/data/tools.ts [app-ssr] (ecmascript)");
+;
+;
+;
+function ToolCard({ tool }) {
+    const category = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$src$2f$data$2f$tools$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["categoryInfo"][tool.category];
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+        href: `/tools/${tool.slug}`,
+        className: "tool-card card p-6 flex flex-col h-full group",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "w-12 h-12 rounded-xl bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform",
+                children: tool.icon
+            }, void 0, false, {
+                fileName: "[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx",
+                lineNumber: 17,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: `category-badge ${category.color} mb-3 self-start`,
+                children: category.name
+            }, void 0, false, {
+                fileName: "[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx",
+                lineNumber: 22,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                className: "text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-brand-500 transition-colors",
+                children: tool.name
+            }, void 0, false, {
+                fileName: "[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx",
+                lineNumber: 27,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-sm text-gray-600 dark:text-gray-400 flex-1",
+                children: tool.shortDescription
+            }, void 0, false, {
+                fileName: "[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx",
+                lineNumber: 32,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "mt-4 flex items-center text-brand-500 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        children: "Kullan"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx",
+                        lineNumber: 38,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                        className: "w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform",
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        stroke: "currentColor",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            strokeLinecap: "round",
+                            strokeLinejoin: "round",
+                            strokeWidth: 2,
+                            d: "M9 5l7 7-7 7"
+                        }, void 0, false, {
+                            fileName: "[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx",
+                            lineNumber: 45,
+                            columnNumber: 21
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx",
+                        lineNumber: 39,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx",
+                lineNumber: 37,
+                columnNumber: 13
+            }, this),
+            tool.isPremium && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "premium-badge absolute top-4 right-4",
+                children: "⭐ Premium"
+            }, void 0, false, {
+                fileName: "[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx",
+                lineNumber: 56,
+                columnNumber: 17
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx",
+        lineNumber: 12,
+        columnNumber: 9
+    }, this);
+}
+}),
+"[project]/Desktop/pentoraSEO/src/app/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Home
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/pentoraSEO/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/pentoraSEO/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$src$2f$data$2f$tools$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/pentoraSEO/src/data/tools.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$src$2f$components$2f$ToolCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/pentoraSEO/src/components/ToolCard.tsx [app-ssr] (ecmascript)");
+"use client";
+;
+;
+;
+;
+const categories = Object.entries(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$src$2f$data$2f$tools$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["categoryInfo"]);
+function Home() {
+    const [searchQuery, setSearchQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [selectedCategory, setSelectedCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("all");
+    const filteredTools = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
+        let result = searchQuery ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$src$2f$data$2f$tools$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["searchTools"])(searchQuery) : __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$src$2f$data$2f$tools$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["tools"];
+        if (selectedCategory !== "all") {
+            result = result.filter((tool)=>tool.category === selectedCategory);
+        }
+        return result;
+    }, [
+        searchQuery,
+        selectedCategory
+    ]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                className: "relative overflow-hidden bg-gradient-to-br from-brand-500/5 via-white to-purple-500/5 dark:from-brand-500/10 dark:via-gray-950 dark:to-purple-500/10",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "container mx-auto px-4 py-16 md:py-24",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-center max-w-3xl mx-auto",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                    className: "text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6",
+                                    children: [
+                                        "Ücretsiz Online",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "gradient-text block",
+                                            children: "Araçlar"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                            lineNumber: 32,
+                                            columnNumber: 29
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                    lineNumber: 30,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8",
+                                    children: "Kelime sayacı, JSON formatlayıcı, görsel sıkıştırma ve daha fazlası. Hızlı, güvenli ve tamamen ücretsiz."
+                                }, void 0, false, {
+                                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                    lineNumber: 34,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative max-w-xl mx-auto",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "text",
+                                            placeholder: "Araç ara... (örn: json, pdf, kelime)",
+                                            value: searchQuery,
+                                            onChange: (e)=>setSearchQuery(e.target.value),
+                                            className: "input-base pl-12 text-lg"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                            lineNumber: 41,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            className: "absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400",
+                                            fill: "none",
+                                            viewBox: "0 0 24 24",
+                                            stroke: "currentColor",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                strokeLinecap: "round",
+                                                strokeLinejoin: "round",
+                                                strokeWidth: 2,
+                                                d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                lineNumber: 54,
+                                                columnNumber: 33
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                            lineNumber: 48,
+                                            columnNumber: 29
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                    lineNumber: 40,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex justify-center gap-8 mt-8 text-sm",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-center",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "text-2xl font-bold text-brand-500",
+                                                    children: "15+"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                    lineNumber: 66,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "text-gray-500",
+                                                    children: "Araç"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                    lineNumber: 67,
+                                                    columnNumber: 33
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                            lineNumber: 65,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-center",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "text-2xl font-bold text-brand-500",
+                                                    children: "100%"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                    lineNumber: 70,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "text-gray-500",
+                                                    children: "Ücretsiz"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                    lineNumber: 71,
+                                                    columnNumber: 33
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                            lineNumber: 69,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-center",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "text-2xl font-bold text-brand-500",
+                                                    children: "🔒"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                    lineNumber: 74,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "text-gray-500",
+                                                    children: "Gizlilik"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                    lineNumber: 75,
+                                                    columnNumber: 33
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                            lineNumber: 73,
+                                            columnNumber: 29
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                    lineNumber: 64,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                            lineNumber: 29,
+                            columnNumber: 21
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                        lineNumber: 28,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute top-1/2 left-0 w-64 h-64 bg-brand-500/10 rounded-full filter blur-3xl -translate-y-1/2 -translate-x-1/2"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                        lineNumber: 82,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute top-1/2 right-0 w-64 h-64 bg-purple-500/10 rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/2"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                        lineNumber: 83,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                lineNumber: 27,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                id: "tools",
+                className: "container mx-auto px-4 py-12",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-wrap gap-2 mb-8 justify-center",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>setSelectedCategory("all"),
+                                className: `px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === "all" ? "bg-brand-500 text-white shadow-lg shadow-brand-500/25" : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"}`,
+                                children: [
+                                    "Tüm Araçlar (",
+                                    __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$src$2f$data$2f$tools$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["tools"].length,
+                                    ")"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 90,
+                                columnNumber: 21
+                            }, this),
+                            categories.map(([key, value])=>{
+                                const count = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$src$2f$data$2f$tools$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["tools"].filter((t)=>t.category === key).length;
+                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    id: key,
+                                    onClick: ()=>setSelectedCategory(key),
+                                    className: `px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === key ? "bg-brand-500 text-white shadow-lg shadow-brand-500/25" : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"}`,
+                                    children: [
+                                        value.icon,
+                                        " ",
+                                        value.name,
+                                        " (",
+                                        count,
+                                        ")"
+                                    ]
+                                }, key, true, {
+                                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                    lineNumber: 102,
+                                    columnNumber: 29
+                                }, this);
+                            })
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                        lineNumber: 89,
+                        columnNumber: 17
+                    }, this),
+                    filteredTools.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6",
+                        children: filteredTools.map((tool)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$src$2f$components$2f$ToolCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ToolCard"], {
+                                tool: tool
+                            }, tool.id, false, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 121,
+                                columnNumber: 29
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                        lineNumber: 119,
+                        columnNumber: 21
+                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-center py-12",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-6xl mb-4",
+                                children: "🔍"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 126,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "text-xl font-semibold text-gray-900 dark:text-white mb-2",
+                                children: "Araç bulunamadı"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 127,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-gray-600 dark:text-gray-400",
+                                children: [
+                                    '"',
+                                    searchQuery,
+                                    '" ile eşleşen araç yok. Farklı bir terim deneyin.'
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 130,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>{
+                                    setSearchQuery("");
+                                    setSelectedCategory("all");
+                                },
+                                className: "btn-secondary mt-4",
+                                children: "Filtreleri Temizle"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 133,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                        lineNumber: 125,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                lineNumber: 87,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                id: "premium",
+                className: "container mx-auto px-4 py-16",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "card p-8 md:p-12 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 border-amber-200 dark:border-amber-800 text-center",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "max-w-2xl mx-auto",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "premium-badge mb-4 inline-flex",
+                                children: "⭐ Premium"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 150,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4",
+                                children: "Daha Fazlası İçin Premium"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 151,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-lg text-gray-600 dark:text-gray-400 mb-8",
+                                children: "Reklamsız deneyim, limitsiz toplu işlem ve öncelikli destek ile verimliliğinizi artırın."
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 154,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "grid sm:grid-cols-3 gap-4 mb-8",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-white/50 dark:bg-gray-900/50 rounded-xl p-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "text-2xl mb-2",
+                                                children: "🚫"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                lineNumber: 161,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "font-semibold text-gray-900 dark:text-white",
+                                                children: "Reklamsız"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                lineNumber: 162,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-sm text-gray-600 dark:text-gray-400",
+                                                children: "Temiz arayüz"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                lineNumber: 165,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 160,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-white/50 dark:bg-gray-900/50 rounded-xl p-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "text-2xl mb-2",
+                                                children: "♾️"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                lineNumber: 170,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "font-semibold text-gray-900 dark:text-white",
+                                                children: "Limitsiz"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                lineNumber: 171,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-sm text-gray-600 dark:text-gray-400",
+                                                children: "Toplu işlem"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                lineNumber: 174,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 169,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-white/50 dark:bg-gray-900/50 rounded-xl p-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "text-2xl mb-2",
+                                                children: "💬"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                lineNumber: 179,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "font-semibold text-gray-900 dark:text-white",
+                                                children: "Öncelikli"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                lineNumber: 180,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-sm text-gray-600 dark:text-gray-400",
+                                                children: "Destek"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                                lineNumber: 183,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 178,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 159,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: "inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-white shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all hover:scale-105",
+                                children: "Premium Al - Yakında"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 189,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                        lineNumber: 149,
+                        columnNumber: 21
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                    lineNumber: 148,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                lineNumber: 147,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                className: "container mx-auto px-4 py-16",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                        className: "text-3xl font-bold text-center text-gray-900 dark:text-white mb-12",
+                        children: "Neden PentoraSEO?"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                        lineNumber: 198,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "grid md:grid-cols-3 gap-8",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-center",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-16 h-16 rounded-2xl bg-brand-500/10 dark:bg-brand-500/20 flex items-center justify-center text-3xl mx-auto mb-4",
+                                        children: "⚡"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 203,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "text-xl font-semibold text-gray-900 dark:text-white mb-2",
+                                        children: "Hızlı"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 206,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-gray-600 dark:text-gray-400",
+                                        children: "Tüm işlemler tarayıcınızda gerçekleşir. Sunucu bekleme yok."
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 209,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 202,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-center",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-16 h-16 rounded-2xl bg-green-500/10 dark:bg-green-500/20 flex items-center justify-center text-3xl mx-auto mb-4",
+                                        children: "🔒"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 214,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "text-xl font-semibold text-gray-900 dark:text-white mb-2",
+                                        children: "Güvenli"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 217,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-gray-600 dark:text-gray-400",
+                                        children: "Verileriniz cihazınızdan asla çıkmaz. Tam gizlilik garantisi."
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 220,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 213,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-center",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-16 h-16 rounded-2xl bg-purple-500/10 dark:bg-purple-500/20 flex items-center justify-center text-3xl mx-auto mb-4",
+                                        children: "💯"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 225,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "text-xl font-semibold text-gray-900 dark:text-white mb-2",
+                                        children: "Ücretsiz"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 228,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$pentoraSEO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-gray-600 dark:text-gray-400",
+                                        children: "Tüm temel özellikler sonsuza kadar ücretsiz."
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                        lineNumber: 231,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                                lineNumber: 224,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                        lineNumber: 201,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Desktop/pentoraSEO/src/app/page.tsx",
+                lineNumber: 197,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true);
+}
+}),
+];
+
+//# sourceMappingURL=Desktop_pentoraSEO_src_5cb93e2e._.js.map
