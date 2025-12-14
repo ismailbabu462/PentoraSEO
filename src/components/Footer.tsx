@@ -102,12 +102,9 @@ export function Footer() {
 
                 {/* Bottom */}
                 <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center">
                         <p className="text-sm text-gray-500 dark:text-gray-500">
                             © {new Date().getFullYear()} PentoraSEO. Tüm hakları saklıdır.
-                        </p>
-                        <p className="text-xs text-gray-400 dark:text-gray-600">
-                            Verileriniz tarayıcınızdan asla çıkmaz
                         </p>
                     </div>
                 </div>

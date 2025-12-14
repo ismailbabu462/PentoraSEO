@@ -123,6 +123,10 @@ export default function Home() {
                             güvenle çalışabilirsiniz.
                         </p>
                     </div>
+                    {/* CTA */}
+                    <p className="text-center mt-6 text-brand-600 dark:text-brand-400 font-medium">
+                        → Aşağıdan ücretsiz araçları hemen kullanmaya başlayın.
+                    </p>
                 </div>
             </section>
 
@@ -141,7 +145,7 @@ export default function Home() {
                             : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                             }`}
                     >
-                        Tüm Araçlar ({tools.length})
+                        Tümü
                     </button>
                     {categories.map(([key, value]) => {
                         const count = tools.filter((t) => t.category === key).length;
