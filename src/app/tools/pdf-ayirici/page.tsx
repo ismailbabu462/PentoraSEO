@@ -88,7 +88,7 @@ export default function PdfAyiriciPage() {
             copiedPages.forEach(page => newPdf.addPage(page));
 
             const pdfBytes = await newPdf.save();
-            const blob = new Blob([pdfBytes], { type: "application/pdf" });
+            const blob = new Blob([pdfBytes.buffer], { type: "application/pdf" });
             const url = URL.createObjectURL(blob);
 
             const link = document.createElement("a");
@@ -119,7 +119,7 @@ export default function PdfAyiriciPage() {
                 newPdf.addPage(page);
 
                 const pdfBytes = await newPdf.save();
-                const blob = new Blob([pdfBytes], { type: "application/pdf" });
+                const blob = new Blob([pdfBytes.buffer], { type: "application/pdf" });
                 const url = URL.createObjectURL(blob);
 
                 const link = document.createElement("a");
